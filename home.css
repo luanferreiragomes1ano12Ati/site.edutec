@@ -340,10 +340,10 @@ section a:hover {
   overflow: visible;
 }
 
-/* título principal */
+
 #vida h2 {
   font-family: 'Lexend Exa', sans-serif;
-  font-size: 2.7rem;         /* aproximado ao da imagem */
+  font-size: 2.7rem;     
   color: #ffffff;
   margin: 0 0 3.5rem 0;
   letter-spacing: 0.5rem;
@@ -351,40 +351,40 @@ section a:hover {
   font-weight: 600;
 }
 
-/* container das duas cards */
+
 #vida .cards {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;               /* espaço entre as cards */
+  gap: 2.5rem;               
   padding: 0 2rem;
   align-items: center;
 }
 
-/* cada card */
+
 #vida .card {
   position: relative;
   display: flex;
   align-items: center;
-  width: 44rem;              /* largura similar à imagem */
-  min-height: 24.5rem;       /* altura aproximada */
+  width: 44rem;              
+  min-height: 24.5rem;     
   padding: 3rem;
-  background: rgba(255,255,255,0.03);           /* vidro escuro */
+  background: rgba(255,255,255,0.03);           
   backdrop-filter: blur(0.9375rem);
   -webkit-backdrop-filter: blur(0.9375rem);
-  border-radius: 3rem;       /* cantos arredondados grandes */
-  border: 0.125rem solid rgba(255,255,255,0.08);/* contorno fino */
+  border-radius: 3rem;      
+  border: 0.125rem solid rgba(255,255,255,0.08);
   box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.45);
   overflow: hidden;
 }
 
-/* conteúdo textual dentro da card (à esquerda) */
+
 #vida .card .content {
   text-align: left;
-  max-width: 28.5rem;        /* largura do bloco de texto */
+  max-width: 28.5rem;        
   color: #dbefff;
 }
 
-/* subtítulo dentro da card */
+
 #vida .card h3 {
   margin: 0 0 1rem 0;
   font-family: 'Lexend Exa', sans-serif;
@@ -395,7 +395,7 @@ section a:hover {
   font-weight: 600;
 }
 
-/* parágrafo */
+
 #vida .card p {
   margin: 0 0 1.6rem 0;
   font-size: 1rem;
@@ -403,7 +403,6 @@ section a:hover {
   color: #cfe8ff;
 }
 
-/* botão */
 #vida .card a {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -418,13 +417,13 @@ section a:hover {
   background: transparent;
 }
 
-/* ilustração à direita */
+
 #vida .card .illustration {
   margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 12rem;              /* largura do bloco da imagem */
+  width: 12rem;              
   flex-shrink: 0;
   transform: translateY(0);
 }
@@ -442,19 +441,18 @@ section a:hover {
 /* CURIOSIDADES */
 /* ===================== */
 #curiosidades {
-  /* Propriedades para a imagem de fundo */
+
   background-image: url('./images/fundoPeixes.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
-  /* Garante que a seção ocupe a altura total da tela */
+  
   min-height: 100vh;
   
-  /* Adiciona um padding para espaçamento interno */
   padding: 120px 60px;
   
-  /* Centraliza todo o conteúdo da seção usando Flexbox */
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -511,9 +509,8 @@ section a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: left; /* Adicionado para garantir o alinhamento do texto */
-  margin-right: 20rem; /* Mantido para espaçamento entre texto e imagem */
-   /* Removido o espaçamento excessivo da esquerda */
+  text-align: left;
+  margin-right: 20rem;
   gap: 20px;
 }
 
@@ -656,7 +653,7 @@ footer {
   color: #dbefff;
 }
 
-/* Container de 3 colunas (Rodapé) */
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1.5fr;

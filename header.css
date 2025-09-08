@@ -11,16 +11,16 @@ header {
 
 .header {
   width: 100%;
-  height: 5.625rem; /* Altura fixa do container azul */
+  height: 5.625rem; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.25rem; /* Espaçamento lateral */
+  padding: 0 1.25rem; 
 }
 
 .logo img {
-  height: auto; /* Tamanho da logo controlado pela altura */
-  width: 10.625rem;  /* Mantém proporção da imagem */
+  height: auto; 
+  width: 10.625rem;  
 }
 
 .nav {

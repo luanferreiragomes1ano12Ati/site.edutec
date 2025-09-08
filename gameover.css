@@ -67,7 +67,7 @@ body {
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
-  white-space: nowrap; /* impede quebra de linha */
+  white-space: nowrap; 
   display: flex;
   justify-content: center;
   align-items: center;
