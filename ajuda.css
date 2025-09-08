@@ -1,0 +1,80 @@
+@import url(./header.css);
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #222;
+}
+
+/* HEADER - TEXTO ESQUERDA + IMAGEM DIREITA */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* no mobile, a imagem desce */
+  margin-bottom: 40px;
+}
+
+.cabecalho-texto {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.cabecalho h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cabecalho p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.icone {
+  flex: 0 0 200px; /* largura reservada pra imagem */
+  text-align: right;
+}
+
+.icone img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.acoes {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.acao {
+  flex: 1 1 45%;
+}
+
+.acao h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.acao img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.acao p {
+  font-size: 14px;
+  line-height: 1.6;
+}

@@ -1,0 +1,745 @@
+@import url(./header.css);
+
+/* ===================== */
+/* RESET BÁSICO */
+/* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lexa, Helvetica, sans-serif;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===================== */
+/* VÍDEO DE FUNDO */
+/* ===================== */
+.video-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-fundo video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+/* ===================== */
+/* CONTEÚDO SOBRE O VÍDEO */
+/* ===================== */
+.primeira_parte {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 80px;
+  z-index: 1;
+  gap: 25px;
+}
+
+.primeira_parte h1 {
+  font-size: 5.5rem;
+  max-width: 700px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.primeira_parte p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  color: #dbefff;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ===================== */
+/* BIOLOGIA MARINHA */
+/* ===================== */
+#biologia {
+  background-color: #0d125e;
+  padding: 100px 80px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+#biologia h2 {
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+#biologia p {
+  max-width: 650px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #dbefff;
+}
+
+#biologia p strong {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: white;
+}
+
+#biologia a {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 30px;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* ===================== */
+/* SEÇÕES PADRÃO */
+/* ===================== */
+section {
+  padding: 80px 60px;
+  background-color: #001992;
+  text-align: center;
+}
+
+section:nth-child(even) {
+  background-color: #0033cc;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #dbefff;
+}
+
+section a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+section a:hover {
+  background: white;
+  color: #001992;
+}
+
+/* ===================== */
+/* HISTORIA - IMAGEM COM TEXTO SOBREPOSTO ALINHADO À DIREITA */
+/* ===================== */
+#historia {
+  background-color: #020a30;
+  padding: 100px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.mergulhador {
+  position: absolute;
+  right: calc(100% - 55%);
+  top: 50%;
+  transform: translateY(-50%) scale(2.0);
+  width: 200px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.glass-wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px 0 0 100px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+}
+
+.glass-content {
+  color: white;
+  text-align: right;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.glass-content h2 {
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.glass-content p {
+  font-size: 1rem;
+  color: #dbefff;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.glass-content a {
+  padding: 12px 25px;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.glass-content a:hover {
+  background-color: white;
+  color: #001992;
+}
+
+/* ===================== */
+/* NO COTIDIANO */
+/* ===================== */
+#cotidiano {
+  background-color: #020a30;
+  padding: 100px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.mergulhador-cotidiano {
+  position: absolute;
+  left: calc(100% - 55%);
+  top: 50%;
+  transform: translateY(-50%) scale(2);
+  width: 200px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.glass-wrapper-cotidiano {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 100px 100px 0;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+}
+
+.glass-content-cotidiano {
+  color: white;
+  text-align: left;
+  max-width: 600px;
+  margin-right: auto;
+}
+
+.glass-content-cotidiano h2 {
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.glass-content-cotidiano p {
+  font-size: 1rem;
+  color: #dbefff;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.glass-content-cotidiano a {
+  padding: 12px 25px;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.glass-content-cotidiano a:hover {
+  background-color: white;
+  color: #001992;
+}
+
+/* ===================== */
+/* TRANSIÇÃO COM GRADIENTE */
+/* ===================== */
+#transicao-essencia {
+  height: 400px;
+  background: linear-gradient(
+    to bottom,
+    #001150 0%,
+    #020a30 100%
+  );
+}
+
+/* ===================== */
+/* ESSÊNCIA DA VIDA E DA INDÚSTRIA */
+/* ===================== */
+#vida {
+  background-color: #020a30;  
+  padding-bottom: 20rem;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* título principal */
+#vida h2 {
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 2.7rem;         /* aproximado ao da imagem */
+  color: #ffffff;
+  margin: 0 0 3.5rem 0;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* container das duas cards */
+#vida .cards {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;               /* espaço entre as cards */
+  padding: 0 2rem;
+  align-items: center;
+}
+
+/* cada card */
+#vida .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 44rem;              /* largura similar à imagem */
+  min-height: 24.5rem;       /* altura aproximada */
+  padding: 3rem;
+  background: rgba(255,255,255,0.03);           /* vidro escuro */
+  backdrop-filter: blur(0.9375rem);
+  -webkit-backdrop-filter: blur(0.9375rem);
+  border-radius: 3rem;       /* cantos arredondados grandes */
+  border: 0.125rem solid rgba(255,255,255,0.08);/* contorno fino */
+  box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.45);
+  overflow: hidden;
+}
+
+/* conteúdo textual dentro da card (à esquerda) */
+#vida .card .content {
+  text-align: left;
+  max-width: 28.5rem;        /* largura do bloco de texto */
+  color: #dbefff;
+}
+
+/* subtítulo dentro da card */
+#vida .card h3 {
+  margin: 0 0 1rem 0;
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 1.25rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  font-weight: 600;
+}
+
+/* parágrafo */
+#vida .card p {
+  margin: 0 0 1.6rem 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cfe8ff;
+}
+
+/* botão */
+#vida .card a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  background: transparent;
+}
+
+/* ilustração à direita */
+#vida .card .illustration {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;              /* largura do bloco da imagem */
+  flex-shrink: 0;
+  transform: translateY(0);
+}
+
+#vida .card .illustration img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+/* ===================== */
+/* CURIOSIDADES */
+/* ===================== */
+#curiosidades {
+  /* Propriedades para a imagem de fundo */
+  background-image: url('./images/fundoPeixes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Garante que a seção ocupe a altura total da tela */
+  min-height: 100vh;
+  
+  /* Adiciona um padding para espaçamento interno */
+  padding: 120px 60px;
+  
+  /* Centraliza todo o conteúdo da seção usando Flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#curiosidades h2 {
+  font-family: "Lexend Exa", sans-serif;
+  color: white;
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+#curiosidades p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 550px;
+  margin-top: 0;
+  margin-bottom: 50px;
+  padding: 0 20px;
+  color: white;
+}
+
+#curiosidades a {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* ===================== */
+/* MINI GAME */
+/* ===================== */
+#mini-game {
+  display: flex;
+  align-items: center;
+  padding: 80px 60px;
+  background-color: #010930;
+  color: white;
+}
+
+#mini-game .informacoesJogo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left; /* Adicionado para garantir o alinhamento do texto */
+  margin-right: 20rem; /* Mantido para espaçamento entre texto e imagem */
+   /* Removido o espaçamento excessivo da esquerda */
+  gap: 20px;
+}
+
+#mini-game h2 {
+  font-family: "Lexend Exa", sans-serif;
+  color: white;
+  font-size: 2.7rem;
+  margin-left: 10rem;
+  margin-bottom: 0;
+}
+
+#mini-game p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-left: 10rem;
+  max-width: 500px;
+}
+
+#mini-game img {
+  height: 40rem;
+}
+
+#mini-game a {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-left: 10rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===================== */
+/* FILMES */
+/* ===================== */
+#filmes {
+  display: flex;
+  padding: 80px 60px;
+  background-color: #010930;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+#filmes .conteudoFilme {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 20px;
+  margin-inline: 10rem;
+}
+
+#filmes img {
+  height: 50rem;
+}
+
+#filmes h2 {
+  font-family: "Lexend Exa", sans-serif;
+  color: white;
+  font-size: 2.7em;
+  margin-bottom: 0;
+}
+
+#filmes p {
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-top: 0;
+  max-width: 500px;
+}
+
+#filmes a {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+
+footer {
+  background: #020A31;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: "Lexend Exa", sans-serif;
+  color: #dbefff;
+}
+
+/* Seção Desenvolvedores */
+.developers-section {
+  padding-bottom: 50px;
+}
+
+.developers-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: normal;
+}
+
+.developers-section .imagem {
+  display: flex;
+  justify-content: center;
+  gap: 9.5rem;
+  margin-bottom: 15px;
+  margin-top: 5rem;
+}
+
+.developers-section .imagem img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.developers-section .dev-names {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  margin: 20px 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #dbefff;
+}
+
+/* Container de 3 colunas (Rodapé) */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: left;
+  align-items: start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-column {
+  padding: 20px 25px;
+  border-bottom: none;
+}
+
+/* ❌ Linhas verticais removidas */
+/* .footer-column:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+} */
+
+.bioceans-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bioceans-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.instagram-icon,
+.acknowledgment-icon {
+  height: 18px;
+  width: auto;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.footer-column p,
+.footer-column ul {
+  color: #dbefff;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.copyright {
+  color: #999;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 15px 0 20px 0;
+  margin-top: 0;
+}

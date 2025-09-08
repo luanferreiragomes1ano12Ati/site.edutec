@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Lexend+Exa&display=swap" rel="stylesheet">
+  <title>Carrossel de Filmes</title>
+  <link rel="stylesheet" href="filme.css">
+</head>
+<body>
+  
+  <header class="header">
+    <div class="logo">
+      <a href="./home.html">
+        <img src="./images/logo.png" alt="Descrição da imagem" width="200">
+      </a>
+      
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="./historia.html">História</a></li>
+        <li><a href="./essencia.html">Essência</a></li>
+        <li><a href="./cotidiano.html">Cotidiano</a></li>
+        <li><a href="./tela_jogo.html">Jogo</a></li>
+        <li><a href="./filmes.html">Filmes</a></li>
+        <li><a href="./curiosidade.html">Curiosidades</a></li>
+        <li><a href="./sobre_nos.html">Sobre nós</a></li>
+       </ul>
+    </nav>
+  </header>
+  
+  
+  
+  
+  <div class="hero" id="hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1 id="movie-title">Mega Tubarão</h1>
+        <p id="movie-desc">Um gigantesco tubarão pré-histórico retorna das profundezas para aterrorizar os mares.</p>
+        <button id="movie-btn">Assistir Agora</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="carousel">
+    <div class="posters" id="posters">
+      <img src="./images/megatubarao_poster.jpg" alt="Mega Tubarão" data-index="0">
+      <img src="./images/nemo_poster.jpg" alt="Procurando Nemo" data-index="1">
+      <img src="./images/dory_poster.jpg" alt="Procurando Dory" data-index="2">
+      <img src="./images/bob_poster.jpg" alt="Bob Esponja: O Filme" data-index="3">
+      <img src="./images/sea_poster.jpg" alt="Sea Beast" data-index="4">
+      <img src="./images/aquamen_poster.jpg" alt="Aquaman 1" data-index="5">
+      <img src="./images/aquamen2_poster.jpg" alt="Aquaman 2" data-index="6">
+      <div class="carrossel-indicators"></div>
+    </div>
+  </section>
+
+  <script src="filme.js"></script>
+</body>
+</html>

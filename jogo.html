@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="jogo.css">
+  <title>Proteger os Oceanos - Jogo</title>
+</head>
+<body>
+
+  <!--HEADER HTML-->
+
+  <header class="header">
+    <div class="logo">
+      <a href="./home.html">
+        <img src="./images/logo.png" alt="Descrição da imagem" width="200">
+      </a>
+      
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="./historia.html">História</a></li>
+        <li><a href="./essencia.html">Essência</a></li>
+        <li><a href="./cotidiano.html">Cotidiano</a></li>
+        <li><a href="./tela_jogo.html">Jogo</a></li>
+        <li><a href="./filmes.html">Filmes</a></li>
+        <li><a href="./curiosidade.html">Curiosidades</a></li>
+        <li><a href="./sobre_nos.html">Sobre nós</a></li>
+       </ul>
+    </nav>
+  </header>
+
+  <!-- Contúdo da página-->
+
+  <!-- Fundo de vídeo -->
+  <div class="video-fundo">
+    <video autoplay muted loop>
+      <source src="./images/fundo_jogo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Container do jogo -->
+  <div id="gameContainer">
+    <div id="tartaruga"></div>
+    <div id="pontuacao">0</div>
+
+    <!-- Chão (areia) -->
+    <div id="chao"></div>
+
+    <!-- Modal do Quiz -->
+    <div id="quizModal" class="hidden">
+      <p id="pergunta"></p>
+      <div id="opcoes"></div>
+    </div>
+
+    <!-- Tela de Game Over -->
+    <div id="gameOver" class="hidden">
+      <h2>Fim de Jogo!</h2>
+      <button id="reiniciar">Reiniciar</button>
+    </div>
+  </div>
+
+  <script src="jogo.js"></script>
+</body>
+</html>

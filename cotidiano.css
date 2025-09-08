@@ -1,0 +1,62 @@
+@import "./header.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* impede rolagem */
+}
+
+h1 {
+    font-family: "Lexend Exa", sans-serif;
+    color: #003C57;
+    margin-bottom: 5.3125rem;
+    font-size: 2.5rem;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 3.4375rem;
+}
+
+button {
+    font-size: 0.9375rem;
+    width: 6.25rem;
+    height: 2.125rem;
+    color: #FFF;
+    border-radius: 1.25rem;
+    background-color: #003C57;
+    border: none;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 5rem); /* ocupa a tela toda menos o header */
+    margin-top: 0; /* cola no header */
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 3.4375rem;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: flex-end;
+    width: 50%;   
+    height: 100%;
+}
+
+.img img {
+    width: 80%;   /* agora ocupam toda a largura da área da direita */
+    height: 50%;   /* cada uma pega metade da altura disponível */
+    object-fit: cover;
+}

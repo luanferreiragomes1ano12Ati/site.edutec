@@ -1,0 +1,211 @@
+@import url(./header.css);
+
+/* BASE GERAL */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+/* VÍDEO DE FUNDO */
+.video-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-fundo video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+/* INTRODUÇÃO */
+.curiosidades-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.titulo-curiosidades {
+  font-size: 6vw;
+  font-family: 'Lexend Exa', sans-serif;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.texto-intro {
+  max-width: 700px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.texto-intro strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* CONTAINER DE CARDS */
+.curiosidades {
+  background-color: #011936;
+  padding: 60px 20px;
+}
+
+.cards-curiosidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px; /* Espaçamento maior */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* CARDS 1 A 3 - TRADICIONAIS */
+/* ========================= */
+.card {
+  padding: 30px 25px;
+  max-width: 360px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:nth-child(-n+3) {
+  background-color: #022b4a;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:nth-child(-n+3):hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 198, 255, 0.7);
+}
+
+.card .icone img {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00c6ff 0%, #0072ff 100%);
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.6);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: #00c6ff;
+  left: 0;
+  bottom: 0;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #d0e7ff;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* ========================= */
+/* CARDS 4 A 6 - FLIP HORIZONTAL MAIS LARGO */
+/* ========================= */
+.card:nth-child(n+4) {
+    background: none;
+    border: none;
+    box-shadow: none;
+    perspective: 1000px;
+    width: 500px;     /* AUMENTADO */
+    height: 280px;    /* AJUSTADO PROPORCIONALMENTE */
+    padding: 0;
+  }
+  
+  .card:nth-child(n+4) .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  
+  .card:nth-child(n+4):hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card:nth-child(n+4) .flip-front,
+  .card:nth-child(n+4) .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  /* FRENTE: IMAGEM + TÍTULO */
+  .card:nth-child(n+4) .flip-front {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .card:nth-child(n+4) .flip-front h3 {
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  
+  /* VERSO: TEXTO */
+  .card:nth-child(n+4) .flip-back {
+    background-color: #011936;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d0e7ff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  

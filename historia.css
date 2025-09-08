@@ -1,0 +1,139 @@
+@import "./header.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #003C57;
+    font-family: "Lexend Exa", sans-serif;
+    margin-top: 3.125rem; 
+    margin-bottom: 1.875rem;
+}
+
+h2 {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 1.25rem;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* LAYOUT PRINCIPAL */
+.layout {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.historia {
+    margin-top: 10.625rem;
+    margin-bottom: 17.5rem;
+}
+
+/* COLUNA ESQUERDA */
+.col-esquerda {
+    padding: 2.5rem;
+}
+
+/* COLUNA DIREITA (imagem Nemo ocupa toda a coluna) */
+.col-direita img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* caixas coloridas */
+.verde {
+    background-color: #00A453;
+    width: 46.875rem;
+    height: 16.1875rem;
+    border-radius: 2.5rem;
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 1rem;
+    color: #FFF;
+    padding-top: 2.8125rem;
+    padding-left: 3.125rem;
+    margin-bottom: 17.5rem; 
+}
+
+.amarelo {
+    background-color: #E1E10F;
+    width: 53.125rem;
+    border-radius: 2.5rem;
+}
+
+.azul {
+    background-color: #1977A3;
+    width: 59.375rem;
+    border-radius: 2.5rem;
+}
+
+/* pioneiros */
+.pioneiros {
+    background-color: #E6E6E6;
+    font-family: "Open Sans", sans-serif;
+    color: #003C57;
+    max-width: 90%;
+    padding: 1.875rem;
+    border-radius: 1.25rem;
+    margin-bottom: 3.125rem;
+}
+
+.pioneiro {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem; 
+    margin-bottom: 1.875rem;
+}
+
+.pioneiro img {
+    width: 12.5rem;
+    border: 0.25rem solid #1977A3;
+    border-radius: 0.75rem;
+}
+
+.pioneiro h3 {
+    margin-bottom: 0.625rem;
+    font-family: "Lexend Exa", sans-serif;
+    color: #003C57;
+}
+
+/* vídeo aula (ajustada para mesmo tamanho da pioneiros, sem mexer nas margins) */
+.video_aula {
+    background-color: #003C57;
+    color: #FFF;
+    padding: 1.875rem;
+    border-radius: 1.25rem;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    max-width: 90%;
+    width: 100%;
+}
+
+.video_aula h2 {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 1.375rem;
+    margin-bottom: 1.25rem;
+    color: #E1E10F;
+}
+
+.video_aula img {
+    width: 100%;
+    max-width: 43.75rem;
+    border-radius: 0.75rem;
+    border: 0.25rem solid #1977A3;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video_aula img:hover {
+    transform: scale(1.02);
+}

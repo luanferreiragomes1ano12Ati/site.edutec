@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
+
+  <!-- Estilo externo -->
+  <link rel="stylesheet" href="curiosidade.css">
+  <link rel="stylesheet" href="header.css">
+
+  <title>Curiosidades</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="./home.html">
+        <img src="./images/logo.png" alt="Logo do site" width="200">
+      </a>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="./historia.html">História</a></li>
+        <li><a href="./essencia.html">Essência</a></li>
+        <li><a href="./cotidiano.html">Cotidiano</a></li>
+        <li><a href="./tela_jogo.html">Jogo</a></li>
+        <li><a href="./filmes.html">Filmes</a></li>
+        <li><a href="./curiosidade.html">Curiosidades</a></li>
+        <li><a href="./sobre_nos.html">Sobre nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="video-fundo">
+    <video autoplay muted loop>
+      <source src="./images/fundo_curiosidades.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <section class="curiosidades-intro">
+    <h2 class="titulo-curiosidades">CURIOSIDADES</h2>
+    <p class="texto-intro">
+      Os <strong>oceanos</strong> abrigam a maior <strong>diversidade</strong> de vida do planeta e regulam o clima global. 
+      Cada pequena ação — como <strong>reduzir o uso de plástico</strong>, <strong>respeitar a fauna marinha</strong> e <strong>apoiar a ciência</strong> — 
+      é essencial para garantir um futuro sustentável para todos.
+    </p>
+  </section>
+
+  <section class="curiosidades">
+    <div class="cards-curiosidades">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="icone">
+          <img src="./images/icon_diversidade.png" alt="Ícone biodiversidade marinha" />
+        </div>
+        <h3>A Imensidão da Biodiversidade Marinha Desconhecida</h3>
+        <p>
+          Estima-se que existam cerca de 2,2 milhões de espécies marinhas, mas menos de 250 mil foram nomeadas. 
+          Mais de 80% dos oceanos ainda aguardam descoberta, tornando-os um dos maiores mistérios da Terra.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="icone">
+          <img src="./images/icon_profundidade.png" alt="Ícone adaptações oceânicas" />
+        </div>
+        <h3>Adaptações Extremas nas Profundezas Oceânicas</h3>
+        <p>
+          Nas profundezas dos oceanos, onde a pressão é esmagadora, vivem criaturas adaptadas a essas condições extremas. 
+          Um exemplo é o peixe-bolha, que possui um corpo gelatinoso para suportar a alta pressão.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="icone">
+          <img src="./images/icon_baleia.png" alt="Ícone baleia" />
+        </div>
+        <h3>Como as baleias dormem?</h3>
+        <p>
+          As baleias dormem com apenas metade do cérebro de cada vez, mantendo a outra ativa para respirar e se proteger. 
+          Esse tipo de sono, chamado uni-hemisférico, é essencial para sua sobrevivência no oceano.
+        </p>
+      </div>
+
+      <!-- Card 4 - Flip -->
+      <div class="card">
+        <div class="flip-inner">
+          <div class="flip-front" style="background-image: url('./images/recife.jpg');">
+            <h3>Recifes de Coral</h3>
+          </div>
+          <div class="flip-back">
+            <p>
+              Recifes de coral abrigam 25% da vida marinha do planeta, mesmo ocupando menos de 1% do oceano. São verdadeiras cidades submersas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 - Flip -->
+      <div class="card">
+        <div class="flip-inner">
+          <div class="flip-front" style="background-image: url('./images/plancton.jpg');">
+            <h3>Força do Plâncton</h3>
+          </div>
+          <div class="flip-back">
+            <p>
+              Plânctons produzem mais de 50% do oxigênio que respiramos. Pequenos, mas vitais para a vida na Terra e equilíbrio dos oceanos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 - Flip -->
+      <div class="card">
+        <div class="flip-inner">
+          <div class="flip-front" style="background-image: url('./images/Animais_brilhando.jpg');">
+            <h3>Luzes do Abismo</h3>
+          </div>
+          <div class="flip-back">
+            <p>
+              Muitos animais nas profundezas emitem luz — a bioluminescência. Essa habilidade ajuda na comunicação, caça e camuflagem.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

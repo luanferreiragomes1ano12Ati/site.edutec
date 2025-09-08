@@ -1,0 +1,140 @@
+@import url(./header.css);
+
+/* Fonte padrão */
+body {
+    font-family: 'Lexend Exa', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Fundo do vídeo */
+.video-fundo {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%; /* diminuiu a altura do vídeo */
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-fundo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Container do jogo posicionado na parte inferior */
+#gameContainer {
+    position: fixed;   /* fixo na tela */
+    bottom: 0;         /* cola na parte inferior */
+    left: 0;
+    width: 100%;
+    height: 50vh;      /* altura do jogo */
+    overflow: hidden;
+    z-index: 1;        /* acima do vídeo de fundo */
+}
+
+/* Chão (areia) */
+#chao {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #f2d16b; /* amarelo areia */
+    z-index: 2;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Tartaruga */
+#tartaruga {
+    position: absolute;
+    bottom: 40px; /* acima do chão */
+    left: 50px;
+    width: 60px;
+    height: 60px;
+    background: url("./images/tartaruga_jogo.png") no-repeat center/contain;
+    z-index: 3;
+}
+
+/* Obstáculos */
+.obstaculo {
+    position: absolute;
+    bottom: 40px; /* mesmo nível do chão */
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+
+/* Pontuação */
+#pontuacao {
+    position: fixed;   /* fixo na tela */
+    top: 150px;         /* distância do topo da tela */
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px black;
+    z-index: 5;        /* acima do jogo */
+}
+
+/* Modal de perguntas */
+#quizModal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 10;
+}
+
+#quizModal.hidden {
+    display: none;
+}
+
+#opcoes button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* Tela de Game Over */
+#gameOver {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 20;
+}
+
+#gameOver.hidden {
+    display: none;
+}
+
+#reiniciar {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: #28a745;
+    color: #fff;
+}
+

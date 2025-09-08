@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Lexend+Exa&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="gameover.css" />
+  <title>Fim de Jogo</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="textos">
+      <h1>Fim de jogo!</h1>
+      <p>O Michelangelo se perdeu no lixo... <br><br>Sua pontuação final foi:</p>
+      <h2 id="pontuacaoFinal">0</h2>
+
+      <div class="botoes">
+        <a href="./jogo.html">Jogar novamente</a>
+        <a href="./home.html">Página inicial</a>
+      </div>
+    </div>
+
+    <div class="imagem">
+      <img src="./images/derrota.jpg" alt="Tartaruga presa em lixo no mar" />
+    </div>
+  </div>
+
+  <script>
+    // Exibe a pontuação final salva no localStorage
+    const pontuacao = localStorage.getItem("pontuacaoFinal") || 0;
+    document.getElementById("pontuacaoFinal").textContent = pontuacao;
+  </script>
+</body>
+</html>

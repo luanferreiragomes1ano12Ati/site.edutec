@@ -1,0 +1,181 @@
+@import url(./header.css);
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 50vh;
+}
+
+/* Máscara Preta (overlay) - AJUSTADO */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%, /* Começa com uma transparência moderada no topo */
+    rgba(0, 0, 0, 0.9) 50%, /* Intensifica o preto no meio */
+    #000000 100% /* Termina em preto sólido na parte de baixo */
+  );
+  z-index: 2;
+}
+
+/* Conteúdo do Hero (título, descrição, botão) */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1100px;
+  padding: 200px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/* ... seu código CSS existente ... */
+
+.hero-content button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #e50914;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.3s ease; /* Adicionando a transição */
+  }
+  
+  .hero-content button:hover {
+    background: #b00610;
+    transform: scale(1.05); /* Faz o botão crescer um pouco */
+    opacity: 0.9; /* Diminui a opacidade para um efeito sutil */
+  }
+
+/* Carousel fixo abaixo */
+.carousel-section {
+  position: relative;
+  /* Removido: margin-top e z-index para não sobrepor tanto e deixar o gradiente do hero mais visível */
+  /* Reajustado: para complementar o gradiente do overlay */
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  /* Gradiente AJUSTADO para replicar o efeito da imagem */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%, /* Começa transparente no topo para se misturar com o overlay */
+    rgba(0, 0, 0, 0.9) 50%, /* Fica mais opaco à medida que desce */
+    #000000 100% /* Totalmente preto na parte de baixo */
+  );
+  z-index: 1; /* Garante que fique acima de outros elementos, mas abaixo do overlay se houver sobreposição */
+}
+
+/* Removido o pseudo-elemento ::before, pois agora o background da carousel-section é o suficiente */
+/* .carousel-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(...);
+  z-index: -1;
+} */
+
+.carousel {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Posteres */
+.posters {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 60px 40px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  align-items: flex-end;
+}
+
+.posters::-webkit-scrollbar {
+  display: none;
+}
+
+.posters img {
+  flex-shrink: 0;
+  width: 160px;
+  height: 240px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s, box-shadow 0.3s;
+  opacity: 0.6;
+  transform-origin: center bottom;
+  scroll-snap-align: center;
+}
+
+/* Pôster ativo */
+.posters img.active {
+  opacity: 1;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* Indicadores do carrossel */
+.carousel-indicators {
+  text-align: center;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.carousel-indicators span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-indicators span.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}

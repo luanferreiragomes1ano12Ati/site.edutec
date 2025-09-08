@@ -1,0 +1,77 @@
+@import "./header.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* impede rolagem */
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.textos {
+  width: 50%;
+  background-color: #1f2f5b;
+  color: white;
+  padding: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textos h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  font-family: "Lexend Exa", sans-serif;
+}
+
+.textos p {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5625rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.textos a {
+  margin-top: 1.875rem;
+  padding: 0.75rem 1.5rem;
+  border: 0.0625rem solid white;
+  background: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  /* Largura do botão diminuída para 12.5rem (200px) */
+  width: 12.5rem; 
+  border-radius: 0.625rem;
+  text-decoration: none;
+}
+
+.textos a:hover {
+  background-color: white;
+  color: #1f2f5b;
+}
+
+.imagem {
+  width: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem img {
+  max-width: 80%;
+  height: auto;
+}
