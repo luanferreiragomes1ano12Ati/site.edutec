@@ -52,7 +52,7 @@ body {
   display: flex;
   gap: 20px;
   margin-top: 2rem;
-  align-items: center; /* para centralizar verticalmente */
+  align-items: center;
 }
 
 .botoes a {
@@ -71,7 +71,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.5rem; /* altura fixa para uniformizar */
+  height: 3.5rem;
 }
 
 .botoes a:hover {
@@ -88,7 +88,7 @@ body {
 }
 
 .imagem img {
-  max-width: 60%; /* imagem menor */
+  max-width: 60%;
   height: auto;
   border-radius: 10px;
 }

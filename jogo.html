@@ -1,67 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="jogo.css">
-  <title>Proteger os Oceanos - Jogo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Lexend+Exa&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="jogo.css" />
+    <script src="jogo.js" defer></script>
+    <title>Jogo</title>
 </head>
 <body>
+    <!--HEADER HTML-->
+    <header class="header">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./images/logo.png" alt="Descrição da imagem" width="200" />
+            </a>
+        </div>
 
-  <!--HEADER HTML-->
+        <nav class="nav">
+            <ul>
+                <li><a href="./historia.html">História</a></li>
+                <li><a href="./essencia.html">Essência</a></li>
+                <li><a href="./cotidiano.html">Cotidiano</a></li>
+                <li><a href="./tela_jogo.html">Jogo</a></li>
+                <li><a href="./filmes.html">Filmes</a></li>
+                <li><a href="./curiosidade.html">Curiosidades</a></li>
+                <li><a href="./sobre_nos.html">Sobre nós</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header class="header">
-    <div class="logo">
-      <a href="./home.html">
-        <img src="./images/logo.png" alt="Descrição da imagem" width="200">
-      </a>
-      
+    <!-- Conteúdo da página -->
+    <div class="container">
+        <div class="game-board">
+            <img src="./images/sol.png" class="sol" />
+            <img src="./images/clouds.png" class="clouds" />
+            <img src="./images/peixe.gif" class="peixe" />
+            <img src="./images/obstaculo.png" class="pipe" />
+            <div class="score">Pontuação: 0</div>
+        </div>
     </div>
 
-    <nav class="nav">
-      <ul>
-        <li><a href="./historia.html">História</a></li>
-        <li><a href="./essencia.html">Essência</a></li>
-        <li><a href="./cotidiano.html">Cotidiano</a></li>
-        <li><a href="./tela_jogo.html">Jogo</a></li>
-        <li><a href="./filmes.html">Filmes</a></li>
-        <li><a href="./curiosidade.html">Curiosidades</a></li>
-        <li><a href="./sobre_nos.html">Sobre nós</a></li>
-       </ul>
-    </nav>
-  </header>
-
-  <!-- Contúdo da página-->
-
-  <!-- Fundo de vídeo -->
-  <div class="video-fundo">
-    <video autoplay muted loop>
-      <source src="./images/fundo_jogo.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- Container do jogo -->
-  <div id="gameContainer">
-    <div id="tartaruga"></div>
-    <div id="pontuacao">0</div>
-
-    <!-- Chão (areia) -->
-    <div id="chao"></div>
-
-    <!-- Modal do Quiz -->
-    <div id="quizModal" class="hidden">
-      <p id="pergunta"></p>
-      <div id="opcoes"></div>
+    <!-- Bolhas decorativas -->
+    <div class="bubble" style="left: 10%; animation-duration: 15s; animation-delay: 0s;">
+        <img src="./images/bolhas.png" alt="Bolha" />
     </div>
-
-    <!-- Tela de Game Over -->
-    <div id="gameOver" class="hidden">
-      <h2>Fim de Jogo!</h2>
-      <button id="reiniciar">Reiniciar</button>
+    <div class="bubble" style="left: 25%; animation-duration: 12s; animation-delay: 3s;">
+        <img src="./images/bolha2.png" alt="Bolha" />
     </div>
-  </div>
-
-  <script src="jogo.js"></script>
+    <div class="bubble" style="left: 60%; animation-duration: 18s; animation-delay: 2s;">
+        <img src="./images/bolha3.png" alt="Bolha" />
+    </div>
+    <div class="bubble" style="left: 80%; animation-duration: 14s; animation-delay: 1s;">
+        <img src="./images/bolha4.png" alt="Bolha" />
+    </div>
 </body>
 </html>

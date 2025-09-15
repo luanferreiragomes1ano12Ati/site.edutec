@@ -14,6 +14,7 @@ body {
   color: white;
   line-height: 1.6;
   overflow-x: hidden;
+  background-color: white;
 }
 
 /* ===================== */
@@ -25,8 +26,9 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* já está, ótimo */
   z-index: -1;
+  border-radius: 0 0 20px 20px;
 }
 
 .video-fundo video {
@@ -38,6 +40,8 @@ body {
   transform: translate(-50%, -50%);
   object-fit: cover;
   filter: brightness(50%);
+  border-radius: 0 0 20px 20px;
+
 }
 
 /* ===================== */
@@ -52,114 +56,121 @@ body {
   align-items: flex-start;
   padding: 0 80px;
   z-index: 1;
-  gap: 25px;
+  color: white;
+  text-align: left;
+}
+
+/* gradiente preto central */
+.primeira_parte::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+  ellipse at center,
+  rgba(0, 0, 0, 0.2) 0%,
+  rgba(0, 0, 0, 0.35) 40%,
+  rgba(0, 0, 0, 0.5) 75%,
+  rgba(0, 0, 0, 0.6) 100%
+
+);
+
+  );
+  z-index: -1;
+}
+
+.conteudo-texto {
+  max-width: 700px;
 }
 
 .primeira_parte h1 {
-  font-size: 5.5rem;
-  max-width: 700px;
-  line-height: 1.4;
-  color: #ffffff;
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: white;
+  max-width: 800px;
+  margin-bottom: 60px;
 }
 
 .primeira_parte p {
+  font-family: 'Lexend Exa', sans-serif;
   font-size: 1.1rem;
-  max-width: 600px;
+  line-height: 1.8;
   color: #dbefff;
+  max-width: 800px;
 }
 
-p {
-  font-family: "Open Sans", sans-serif;
+.primeira_parte p strong {
+  color: white;
+  font-weight: 700;
 }
 
 /* ===================== */
 /* BIOLOGIA MARINHA */
 /* ===================== */
 #biologia {
-  background-color: #0d125e;
+  background: linear-gradient(to right, #002164, #002b79); /* gradiente escuro à esquerda e mais claro à direita */
   padding: 100px 80px;
-  height: 100vh;
+  min-height: 100vh;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
+  justify-content: space-between; 
+  align-items: center; 
+  text-align: left; 
+  overflow: hidden; /* evita scroll horizontal quando a imagem entra da direita */
+}
+
+#biologia .bio {
+  flex: 0 0 50%; /* ocupa metade do container */
+  max-width: 800px;
 }
 
 #biologia h2 {
   font-family: 'Lexend Exa', sans-serif;
-  font-size: 3.5rem;
-  color: white;
-  font-weight: 500;
-  margin-bottom: 25px;
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  max-width: 800px;
 }
 
 #biologia p {
-  max-width: 650px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #dbefff;
-}
-
-#biologia p strong {
-  font-weight: bold;
-  font-size: 1.05rem;
-  color: white;
-}
-
-#biologia a {
-  display: inline-block;
-  padding: 12px 25px;
-  margin-top: 30px;
-  border: 2px solid white;
-  border-radius: 8px;
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-/* ===================== */
-/* SEÇÕES PADRÃO */
-/* ===================== */
-section {
-  padding: 80px 60px;
-  background-color: #001992;
-  text-align: center;
-}
-
-section:nth-child(even) {
-  background-color: #0033cc;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-section p {
-  max-width: 800px;
-  margin: auto;
   font-size: 1.1rem;
-  color: #dbefff;
+  line-height: 1.7;
+  color: #ffffff;
+  max-width: 800px;
 }
 
-section a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
-  border: 2px solid white;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
+#biologia .imagem {
+  flex: 0 0 50%; /* ocupa metade do container */
+  display: flex;
+  justify-content: center;
+  overflow: visible; /* permite que a imagem maior "saia" do container */
 }
 
-section a:hover {
-  background: white;
-  color: #001992;
+#biologia .imagem img {
+  max-width: 120%;      /* aumenta o tamanho da imagem */
+  height: auto;          /* mantém proporção */
+  transform: translateX(200px); /* aumenta a distância inicial da direita */
+  opacity: 0;
+  transition: all 0.8s ease;
 }
+
+#biologia.show .imagem img {
+  transform: translateX(0); /* volta para o lugar */
+  opacity: 1;
+}
+
+
+
+
 
 /* ===================== */
 /* HISTORIA - IMAGEM COM TEXTO SOBREPOSTO ALINHADO À DIREITA */
@@ -333,17 +344,16 @@ section a:hover {
 /* ESSÊNCIA DA VIDA E DA INDÚSTRIA */
 /* ===================== */
 #vida {
-  background-color: #020a30;  
+  background-color: #020a30;
   padding-bottom: 20rem;
   text-align: center;
   position: relative;
   overflow: visible;
 }
 
-
 #vida h2 {
   font-family: 'Lexend Exa', sans-serif;
-  font-size: 2.7rem;     
+  font-size: 2.7rem;
   color: #ffffff;
   margin: 0 0 3.5rem 0;
   letter-spacing: 0.5rem;
@@ -351,39 +361,48 @@ section a:hover {
   font-weight: 600;
 }
 
-
 #vida .cards {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;               
+  gap: 4rem;                /* aumentamos o espaço entre os cards */
   padding: 0 2rem;
   align-items: center;
+  flex-wrap: wrap;
+  overflow: visible;
 }
 
 
 #vida .card {
+  flex: 1 1 44rem;              /* Flexível, mas base de 44rem */
+  height: 24.5rem;              /* Altura fixa para todos */
+  max-width: 44rem;
   position: relative;
   display: flex;
   align-items: center;
-  width: 44rem;              
-  min-height: 24.5rem;     
   padding: 3rem;
-  background: rgba(255,255,255,0.03);           
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(0.9375rem);
   -webkit-backdrop-filter: blur(0.9375rem);
-  border-radius: 3rem;      
-  border: 0.125rem solid rgba(255,255,255,0.08);
-  box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.45);
+  border-radius: 3rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45);
   overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+#vida .card.selected {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+}
 
 #vida .card .content {
   text-align: left;
-  max-width: 28.5rem;        
+  max-width: 28.5rem;
   color: #dbefff;
 }
-
 
 #vida .card h3 {
   margin: 0 0 1rem 0;
@@ -394,7 +413,6 @@ section a:hover {
   letter-spacing: 0.35rem;
   font-weight: 600;
 }
-
 
 #vida .card p {
   margin: 0 0 1.6rem 0;
@@ -417,13 +435,12 @@ section a:hover {
   background: transparent;
 }
 
-
 #vida .card .illustration {
   margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 12rem;              
+  width: 12rem;
   flex-shrink: 0;
   transform: translateY(0);
 }
@@ -435,6 +452,8 @@ section a:hover {
   user-select: none;
   pointer-events: none;
 }
+
+
 
 
 /* ===================== */
@@ -551,14 +570,20 @@ section a:hover {
 /* ===================== */
 /* FILMES */
 /* ===================== */
+.quem-somos {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 #filmes {
   display: flex;
-  padding: 80px 60px;
+  padding: 80px 60px 0 60px; /* tira o padding-top para aproximar */
   background-color: #010930;
   text-align: center;
-  align-items: center;
+  align-items: flex-start; /* alinha os itens no topo para a imagem descer */
   justify-content: center;
   gap: 40px;
+  margin-top: 0;
 }
 
 #filmes .conteudoFilme {
@@ -572,6 +597,8 @@ section a:hover {
 
 #filmes img {
   height: 50rem;
+  margin: 0; /* remove margens */
+  display: block; /* evita espaços extras */
 }
 
 #filmes h2 {
@@ -602,13 +629,14 @@ section a:hover {
   text-transform: uppercase;
 }
 
+
 /* ===================== */
 /* FOOTER */
 /* ===================== */
 
 
 footer {
-  background: #020A31;
+  background: #001D39;
   text-align: center;
   padding: 50px 20px;
   font-family: "Lexend Exa", sans-serif;

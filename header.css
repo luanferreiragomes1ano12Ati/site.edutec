@@ -5,22 +5,39 @@
   font-family: "Lexend Exa", sans-serif;
 }
 
+html, body {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 header {
   background-color: #001D39;
+  width: 100%;
+  z-index: 1000;
+  /* Altere de sticky para fixed e adicione a transição */
+  position: fixed;
+  top: 0;
+  transition: top 0.3s ease-in-out; /* Transição suave para o efeito de deslizar */
+}
+
+/* Nova classe que o JavaScript usará para esconder o cabeçalho */
+.hide {
+  top: -5.625rem; /* Move o header para cima, fora da tela. O valor é a altura do .header */
 }
 
 .header {
   width: 100%;
-  height: 5.625rem; 
+  height: 5.625rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.25rem; 
+  padding: 0 1.25rem;
 }
 
 .logo img {
-  height: auto; 
-  width: 10.625rem;  
+  height: auto;
+  width: 10.625rem;
 }
 
 .nav {
@@ -88,4 +105,13 @@ header {
   top: -0.5rem;
   right: -0.5rem;
   opacity: 1;
+}
+
+.content-placeholder {
+  height: 1500px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  color: #333;
+  text-align: center;
+  padding-top: 100px;
 }

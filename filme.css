@@ -61,33 +61,30 @@ body {
 
 .hero-content p {
   font-size: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Aumentado o espaço entre o texto e o botão */
 }
 
-/* ... seu código CSS existente ... */
-
+/* Estilo do botão */
 .hero-content button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    background: #e50914;
-    color: #fff;
-    transition: background 0.3s ease, transform 0.3s ease; /* Adicionando a transição */
-  }
-  
-  .hero-content button:hover {
-    background: #b00610;
-    transform: scale(1.05); /* Faz o botão crescer um pouco */
-    opacity: 0.9; /* Diminui a opacidade para um efeito sutil */
-  }
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #e50914;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease; /* Adicionando a transição */
+}
+
+.hero-content button:hover {
+  background: #b00610;
+  transform: scale(1.05); /* Faz o botão crescer um pouco */
+  opacity: 0.9; /* Diminui a opacidade para um efeito sutil */
+}
 
 /* Carousel fixo abaixo */
 .carousel-section {
   position: relative;
-  /* Removido: margin-top e z-index para não sobrepor tanto e deixar o gradiente do hero mais visível */
-  /* Reajustado: para complementar o gradiente do overlay */
   height: 350px;
   display: flex;
   flex-direction: column;
@@ -95,28 +92,16 @@ body {
   align-items: center;
   width: 100%;
   padding-bottom: 20px;
-  /* Gradiente AJUSTADO para replicar o efeito da imagem */
   background: linear-gradient(
     to bottom,
-    transparent 0%, /* Começa transparente no topo para se misturar com o overlay */
-    rgba(0, 0, 0, 0.9) 50%, /* Fica mais opaco à medida que desce */
-    #000000 100% /* Totalmente preto na parte de baixo */
+    transparent 0%, 
+    rgba(0, 0, 0, 0.9) 50%, 
+    #000000 100%
   );
-  z-index: 1; /* Garante que fique acima de outros elementos, mas abaixo do overlay se houver sobreposição */
+  z-index: 1;
 }
 
-/* Removido o pseudo-elemento ::before, pois agora o background da carousel-section é o suficiente */
-/* .carousel-section::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  background: linear-gradient(...);
-  z-index: -1;
-} */
-
+/* Carousel */
 .carousel {
   width: 100%;
   position: relative;

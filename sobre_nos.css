@@ -1,246 +1,201 @@
-@import url(./header.css);
+@import url(header.css);
 
-
-
-
-
-:root {
-    --primary-blue: #1F3B4D; 
-    --secondary-cyan: #00BFFF; 
-    --light-gray: #F5F5F5; 
-    --dark-gray: #333; 
-    --medium-gray: #666; 
-    --white: #FFFFFF;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
+html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--light-gray);
-    color: var(--dark-gray);
-    line-height: 1.6;
+    width: 100%;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--primary-blue);
-}
-
-h1 {
-    font-size: 2.8em;
+.quem-somos {
+    background: linear-gradient(to bottom, #000000 0%, #005f7f 50%, #ffffff 50%, #ffffff 100%);
+    color: white;
     text-align: center;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 2.2em;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-p {
-    margin-bottom: 15px;
-}
-
-
-.header-banner {
-    background: #;
-    color: var(--white);
-    padding: 80px 20px;
-    text-align: center;
+    padding: 160px 100px 100px; /* ↑ aumentamos o padding-top */
+    font-family: 'Lexend Exa', sans-serif;
+    box-sizing: border-box;
     position: relative;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
+}
+
+.quem-somos h1 {
+    font-size: 6vw;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.quem-somos p {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Equipe: imagens e texto em preto (sobre fundo branco) */
+.equipe {
+    color: black;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.membros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.membro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;    /* permite que a imagem aumentada fique sobre os outros */
+    overflow: visible;     /* permite que a imagem aumentada ultrapasse o container */
+}
+
+.membro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+    display: block;
+    
+}
+
+.membro p {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+/* Biografia também preta */
+
+.biografia {
+    background-color: #00334d;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px 40px;
+    border-radius: 6px;
+    color: white;
+    font-family: 'Lexend Exa', sans-serif;
+    text-align: left;
+    box-sizing: border-box;
+    margin: auto;            
+    display: flex;           
+    flex-direction: column;  
+    justify-content: center; 
+    /* Removido height: 100%; */
+    min-height: 180px;  /* Ajuste esse valor para o tamanho desejado */
+    margin-top: 100px;     
+}
+
+
+.biografia h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* OBJETIVOS */
+.objetivos {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
     margin-top: 20px;
 }
 
-.header-banner h1 {
-    color: var(--white);
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.objetivos h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #00334d;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
 }
 
-.header-banner p {
-    font-size: 1.4em;
+.cards-objetivos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 280px;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    background-color: #0a75a7;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+/* AGRADECIMENTOS */
+.agradecimentos {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+    color: #000000;
+    margin-top: 100px;
+}
+
+.agradecimentos h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #00334d;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.agradecimentos p {
     max-width: 800px;
     margin: 0 auto;
-    opacity: 0.9;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
-.header-banner .copyright {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 0.8em;
-    opacity: 0.7;
-}
-
-
-/* Seção Sobre Nós */
-.about-us {
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin-bottom: 40px;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background-color: var(--light-gray);
+.footer {
+    background-color: #00334d; /* azul escuro */
+    color: white;
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-}
-
-.feature-item i {
-    font-size: 2em;
-    color: var(--secondary-cyan);
-    min-width: 40px;
-    text-align: center;
-}
-
-.feature-item p {
-    margin: 0;
-    font-weight: 600;
-    color: var(--primary-blue);
-}
-
-.social-media {
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.social-grid {
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 16px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.social-card {
-    text-align: center;
-    width: 120px;
-}
-
-.social-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--secondary-cyan);
-    margin-bottom: 10px;
-    transition: border-color 0.3s ease;
-}
-
-.social-card img:hover {
-    border-color: var(--primary-blue);
-}
-
-.social-card p {
-    margin: 0;
-    font-size: 0.9em;
-    color: var(--medium-gray);
-}
-
-.acknowledgements {
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
+    gap: 10px; /* espaço entre o texto e o ícone */
+    margin-top: 100px;
 }
 
-.acknowledgements .text-content {
-    flex: 2;
-    min-width: 300px;
+/* Caso tenha um ícone no final (como o da imagem) */
+.footer img {
+    height: 24px;
 }
 
-.acknowledgements .unasp-logo {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-}
-
-.acknowledgements .unasp-logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;
-    }
-    .header-banner {
-        padding: 60px 20px;
-    }
-    .header-banner h1 {
-        font-size: 2.8em;
-    }
-    .header-banner p {
-        font-size: 1.1em;
-    }
-    .about-us, .social-media, .acknowledgements {
-        padding: 30px 20px;
-    }
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    .acknowledgements {
-        flex-direction: column;
-        text-align: center;
-    }
-    .acknowledgements .unasp-logo {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2em;
-    }
-    .header-banner h1 {
-        font-size: 2.2em;
-    }
+.membro img.hover-active {
+    transform: scale(1.2);               /* aumenta a imagem */
+    outline: 4px solid #0a75a7;          /* contorno azul mais visível */
+    box-shadow: 0 0 15px 5px rgba(10, 117, 167, 0.7); /* sombra suave ao redor */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+    position: relative;                   /* para garantir que fique sobre as outras imagens */
+    z-index: 10;
 }

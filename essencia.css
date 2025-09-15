@@ -1,4 +1,4 @@
-@import "./header.css";
+@import url(./header.css);
 
 /* ==========================
    RESET + BASE
@@ -11,192 +11,152 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: radial-gradient(circle at top left, #001f3f, #003c57, #001020);
+  background: #001f3f;
   color: #f5f5f5;
   line-height: 1.7;
   overflow-x: hidden;
+  height: 100%;
 }
 
 /* ==========================
-   CONTAINER EM GRID
-========================== */
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 3rem;
-  padding: 5rem 8%;
-  margin-top: 2rem;
-  animation: fadeIn 1s ease;
-}
-
-/* ==========================
-   BLOCO ESQUERDO (P1)
+   P1 - SEÇÃO DE TELA CHEIA
 ========================== */
 .p1 {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 3rem 2.5rem;
-  border-radius: 1.5rem;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
-}
+  width: 100vw;
+  height: 85vh;
+  background-image: url('./images/corais.avif'); /* Atualize o caminho se necessário */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-.p1:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-}
-
-.p1 h1 {
-  font-family: "Lexend Exa", sans-serif;
-  font-size: 2.6rem;
-  text-align: left;
-  color: #00d4ff;
-  margin-bottom: 2rem;
-  position: relative;
-  transition: background 0.4s ease, -webkit-background-clip 0.4s ease;
-}
-
-.p1 h1:hover {
-  background: linear-gradient(90deg, #00d4ff, #00ffa3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.p1 p {
-  font-size: 1.05rem;
-  color: #dcdcdc;
-  margin-bottom: 1.4rem;
-  text-align: justify;
-}
-
-/* ==========================
-   BLOCO DIREITO (CARDS)
-========================== */
-.lado-direito {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: flex-start;   /* <-- Aqui é a mudança */
+  padding: 300px 5vw 60px 5vw;   /* <-- Subiu o texto com padding-top */
+  box-sizing: border-box;
 }
 
-.bloco {
-  position: relative; /* necessário para o ::after */
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(12px);
-  border-radius: 1.2rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.8s ease forwards;
-}
 
-.bloco:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.bloco:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-.bloco:hover {
-  transform: translateY(-6px) scale(1.03);
-  background: rgba(0, 0, 0, 0.35);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.25);
-}
-
-.bloco img {
-  max-width: 140px;
-  border-radius: 0.8rem;
-  transition: transform 0.5s ease;
-}
-
-.bloco:hover img {
-  transform: rotate(1.5deg) scale(1.08);
-}
-
-.bloco p {
-  font-size: 1rem;
-  color: #f1f1f1;
-  line-height: 1.6;
-}
-
-/* ==========================
-   ANIMAÇÕES EXTRAS
-========================== */
-.bloco::after {
+/* Escurece o fundo para melhor leitura */
+.p1::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 1.2rem;
-  background: linear-gradient(135deg, transparent, rgba(0, 212, 255, 0.12));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-.bloco:hover::after {
-  opacity: 1;
+/* Texto sobre o overlay */
+.p1 h1,
+.p1 p {
+  position: relative;
+  z-index: 2;
+  color: white;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.p1 h1 {
+  font-size: 6vw;
+  font-weight: 800;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: 'Lexend Exa', sans-serif;
 }
 
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.p1 p {
+  max-width: 1000px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+}
+
+/* ==========================
+   CONTEÚDO PRINCIPAL (BLOCOS)
+========================== */
+.conteudo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 60px 5vw;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background: #001f3f;
+}
+
+.conteudo .bloco1,
+.conteudo .bloco2,
+.conteudo .bloco3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 32%;
+  background: none;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.conteudo .bloco1:hover,
+.conteudo .bloco2:hover,
+.conteudo .bloco3:hover {
+  transform: translateY(-5px);
+}
+
+.conteudo .bloco1 img,
+.conteudo .bloco2 img,
+.conteudo .bloco3 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.conteudo .bloco1 p,
+.conteudo .bloco2 p,
+.conteudo .bloco3 p {
+  color: white;
+  font-size: 1em;
+  line-height: 1.6;
+  max-width: 550px;
 }
 
 /* ==========================
    RESPONSIVIDADE
 ========================== */
 @media (max-width: 1024px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .p1 {
-    text-align: center;
-  }
-
-  .p1 h1 {
-    text-align: center;
-  }
-
-  .bloco {
+  .conteudo {
     flex-direction: column;
-    text-align: center;
   }
 
-  .bloco img {
-    max-width: 100%;
+  .conteudo .bloco1,
+  .conteudo .bloco2,
+  .conteudo .bloco3 {
+    width: 100%;
+  }
+
+  .conteudo .bloco1 img,
+  .conteudo .bloco2 img,
+  .conteudo .bloco3 img {
+    width: 80px;
+    height: 80px;
   }
 }
 
 @media (max-width: 600px) {
   .p1 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .p1 p {
-    font-size: 0.95rem;
-
+    font-size: 1rem;
   }
 
-  .bloco p {
+  .conteudo .bloco1 p,
+  .conteudo .bloco2 p,
+  .conteudo .bloco3 p {
     font-size: 0.9rem;
   }
 }
