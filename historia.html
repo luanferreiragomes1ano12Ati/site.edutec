@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="historia.css">
-    <title>História</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="historia.css" />
+  <title>História</title>
 </head>
 <body>
+  <div class="bolhas-container" id="bolhas-container"></div>
 
-    <!--HEADER HTML-->
-
+  <!--HEADER-->
   <header class="header">
     <div class="logo">
       <a href="./index.html">
@@ -35,67 +33,102 @@
         <li><a href="./sobre_nos.html">Sobre nós</a></li>
        </ul>
     </nav>
+
+    <a href="./login.html">Login</a>
   </header>
 
-  <!-- Contúdo da página-->
- 
-    <div class="layout">
-        <!-- COLUNA ESQUERDA -->
-        <div class="col-esquerda">
-            <div class="historia">
-                <h1>HISTÓRIA DA BIOLOGIA <br> MARINHA</h1>
-                <p>A biologia marinha, ciência dedicada ao estudo dos organismos que <br> 
-                habitam ambientes aquáticos salgados, tem raízes que remontam à <br>
-                Antiguidade. Charles Darwin, em sua viagem a bordo do Beagle, <br>
-                estudou corais e animais marinhos que inspiraram sua teoria da <br>
-                evolução. Séculos depois, Sylvia Earle aprofundou nosso conhecimento <br>
-                dos oceanos, liderando expedições e defendendo a criação de áreas <br> 
-                marinhas protegidas.</p>
+  <!-- CONTEÚDO -->
+  <div class="layout">
+    <div class="col-esquerda">
+      <div class="historia">
+        <h1>HISTÓRIA </h1>
+        <p>
+          A biologia marinha, ciência dedicada ao estudo dos organismos que
+          habitam ambientes aquáticos salgados, tem raízes que remontam à Antiguidade.
+          Charles Darwin, em sua viagem a bordo do Beagle, estudou corais e animais marinhos
+          que inspiraram sua teoria da evolução. Séculos depois, Sylvia Earle aprofundou
+          nosso conhecimento dos oceanos, liderando expedições e defendendo a criação de áreas
+          marinhas protegidas.
+        </p>
+      </div>
+
+      <!-- BRASIL -->
+      <div class="azul">
+        <div class="amarelo">
+          <div class="verde">
+            <h2>No Brasil</h2>
+            <p>
+              A biologia marinha no Brasil começou a se desenvolver no século XX.
+              Veja a linha do tempo abaixo:
+            </p>
+
+            <!-- LINHA DO TEMPO + CARD -->
+            <div class="timeline-container">
+              <div class="timeline" id="timeline">
+                <!-- Eventos criados via JS -->
+              </div>
+              <div class="timeline-card" id="timeline-card">
+                <h3 id="card-title">Selecione um ano</h3>
+                <p id="card-text">Clique em um ponto da linha do tempo para ver os detalhes.</p>
+              </div>
             </div>
-
-            <div class="azul">
-                <div class="amarelo">
-                    <div class="verde">
-                        <h2>No Brasil</h2>
-                        <p>A biologia marinha no Brasil começou a se desenvolver no <br> século XX. Em 1955, Paulo Sawaya fundou o Instituto de <br>
-                        Biologia Marinha (IBM) em São Sebastião, São Paulo, que <br> mais tarde foi incorporado à USP como o Centro de Biologia <br> Marinha (CEBIMar) em 1962.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pioneiros">
-                <h2>Pioneiros</h2>
-
-                <div class="pioneiro">
-                    <img src="./images/Sylvia Earle.jpg" alt="Imagem de Sylvia Earle.">
-                    <div>
-                        <h3>Sylvia Earle</h3>
-                        <p>Pioneira da oceanografia e primeira cientista-chefe <br> da NOAA, Sylvia Earle lidera a criação de áreas <br> marinhas protegidas pelo projeto Mission Blue, <br> ajudando a salvar ecossistemas oceânicos no <br> mundo todo.</p>
-                    </div>
-                </div>
-
-                <div class="pioneiro">
-                    <img src="./images/Charles Darwin.jpg" alt="Imagem de Charles Darwin.">
-                    <div>
-                        <h3>Charles Darwin</h3>
-                        <p>Naturalista britânico, Darwin revolucionou a ciência <br> com a teoria da evolução por seleção natural, <br> apresentada em A Origem das Espécies. Sua obra <br> transformou para sempre a maneira como <br> entendemos a vida na Terra.</p>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="video_aula">
-                <h2>Veja videoaulas para entender melhor os conteúdos</h2>
-                <a href="https://www.youtube.com/watch?v=ePQZx7kb4Z8" target="_blank">
-                    <img src="./images/thumb.png" alt="Imagem representando a videoaula">
-                </a>
-            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- COLUNA DIREITA (Nemo) -->
-        <div class="col-direita">
-            <img src="./images/peixe_nemo.jpg" alt="Imagem de peixes nadando.">
+      <!-- Pioneiros -->
+      <div class="pioneiros">
+        <h2>Pioneiros</h2>
+        <div class="pioneiro">
+          <img src="./images/Sylvia Earle.jpg" alt="Imagem de Sylvia Earle." />
+          <div>
+            <h3>Sylvia Earle</h3>
+            <p>
+              Pioneira da oceanografia e primeira cientista-chefe da NOAA, Sylvia Earle lidera a criação de áreas
+              marinhas protegidas pelo projeto Mission Blue, ajudando a salvar ecossistemas oceânicos no mundo todo.
+            </p>
+          </div>
         </div>
+        <div class="pioneiro">
+          <img src="./images/Charles Darwin.jpg" alt="Imagem de Charles Darwin." />
+          <div>
+            <h3>Charles Darwin</h3>
+            <p>
+              Naturalista britânico, Darwin revolucionou a ciência com a teoria da evolução por seleção natural,
+              apresentada em A Origem das Espécies. Sua obra transformou para sempre a maneira como entendemos a vida na Terra.
+            </p>
+          </div>
+        </div>
+        <div class="pioneiro">
+            <img src="./images/fritz.jpg" alt="Imagem de Fritz." />
+            <div>
+              <h3>Fritz Müller</h3>
+              <p>
+                Fritz Müller foi um naturalista pioneiro que ampliou o conhecimento da biologia marinha ao estudar espécies do litoral brasileiro, aplicando a teoria da seleção natural para entender suas adaptações e interações ecológicas.
+              </p>
+            </div>
+          </div>
+          <div class="pioneiro">
+            <img src="./images/Rachel20Carson.webp" alt="Imagem de Charles Darwin." />
+            <div>
+              <h3>Rachel Carson</h3>
+              <p>
+                Bióloga marinha e autora de "Primavera Silenciosa", ela alertou o mundo sobre os efeitos devastadores dos pesticidas no meio ambiente, o que impulsionou o movimento ambientalista e levou à criação da EPA (Agência de Proteção Ambiental) nos EUA. 
+              </p>
+            </div>
+          </div>
+      </div>
+
+      <!-- Video -->
+      <div class="video_aula">
+        <h2>Veja videoaulas para entender melhor os conteúdos</h2>
+        <a href="https://www.youtube.com/watch?v=ePQZx7kb4Z8" target="_blank">
+          <img src="./images/thumb.png" alt="Imagem representando a videoaula" />
+        </a>
+      </div>
     </div>
+  </div>
+
+  <script src="./historia.js"></script>
 </body>
 </html>

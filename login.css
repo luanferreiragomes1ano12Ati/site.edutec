@@ -1,0 +1,144 @@
+@import url(./header.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Exa', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+        url('./images/photo-1637904219134-9075cab500f6.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+
+.left-section {
+    flex: 1; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0; 
+}
+
+.form-panel {
+    width: 100%; 
+    height: 100%; 
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 30px 30px 0; 
+    padding: 4rem; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; 
+}
+
+.form-panel h2 {
+    font-size: 2.5rem; 
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+input {
+    width: 80%; 
+    padding: 1rem; 
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1rem; 
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.btn-primary {
+    font-family: 'Lexend Exa', sans-serif;
+    text-transform: uppercase;
+    width: 80%; 
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: #012F6B;
+    color: #fff;
+    font-size: 1rem; 
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.btn-primary:hover {
+    background: #154a91;
+}
+
+
+.links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem; 
+    transition: color 0.3s ease;
+    margin-left: 11rem;
+}
+
+.links a:hover {
+    color: #fff;
+}
+
+
+.right-section {
+    flex: 1; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.text-overlay {
+    text-align: center;
+    z-index: 1;
+}
+
+.text-overlay h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.text-overlay p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffffff;
+}

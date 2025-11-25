@@ -2,12 +2,12 @@
 
 /* BASE GERAL */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lexend Exa', sans-serif;
     color: white;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #000;
+    background-color: #012F6B;
 }
 
 /* VÍDEO DE FUNDO */
@@ -66,7 +66,7 @@ body {
 
 /* CONTAINER DE CARDS */
 .curiosidades {
-    background-color: #011936;
+    background-color: #012F6B;
     padding: 60px 20px;
 }
 
@@ -98,7 +98,7 @@ body {
     height: 120px;
     object-fit: contain;
     margin-bottom: 30px; /* Aumenta o espaço entre a imagem e o título */
-    background-color: #0a75a7;  /* Cor de fundo azul para as imagens */
+    background-color: #072142;  /* Cor de fundo azul para as imagens */
     border-radius: 50%;  /* Torna as imagens circulares */
     padding: 15px;
 }

@@ -1,139 +1,399 @@
 @import "./header.css";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    overflow-x: hidden;
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background: linear-gradient(to bottom, #012F6B, #00060a);
+  font-family: "Lexend Exa", sans-serif;
 }
+
 
 h1 {
-    color: #003C57;
-    font-family: "Lexend Exa", sans-serif;
-    margin-top: 3.125rem; 
-    margin-bottom: 1.875rem;
+  font-family: "Lexend Exa", sans-serif;
+  font-size: 6vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 60px;
+  margin-top: 15rem;
+  max-width: 1700px;
 }
 
 h2 {
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: 1.25rem;
+  font-family: "Lexend Exa", sans-serif;
+  margin-bottom: 1.25rem;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h3{
+  color: white;
+  margin-bottom: 10px;
 }
 
 p {
-    font-family: "Open Sans", sans-serif;
+  font-family: "Lexend Exa", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #dbefff;
 }
 
-/* LAYOUT PRINCIPAL */
+/* LAYOUT */
 .layout {
-    display: grid;
-    grid-template-columns: 60% 40%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem 4rem 2rem;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .historia {
-    margin-top: 10.625rem;
-    margin-bottom: 17.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 2000px;
+  margin: 0 auto 3rem auto;
 }
 
-/* COLUNA ESQUERDA */
-.col-esquerda {
-    padding: 2.5rem;
+.historia p {
+  max-width: 900px;
+  margin-bottom: 12rem;
 }
 
-/* COLUNA DIREITA (imagem Nemo ocupa toda a coluna) */
-.col-direita img {
-    width: 100%;
-    object-fit: cover;
-}
+/* caixas Brasil */
 
-/* caixas coloridas */
-.verde {
-    background-color: #00A453;
-    width: 46.875rem;
-    height: 16.1875rem;
-    border-radius: 2.5rem;
-    font-family: "Lexend Exa", sans-serif;
-    font-size: 1rem;
-    color: #FFF;
-    padding-top: 2.8125rem;
-    padding-left: 3.125rem;
-    margin-bottom: 17.5rem; 
-}
 
 .amarelo {
-    background-color: #E1E10F;
-    width: 53.125rem;
-    border-radius: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2.5rem;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  color: #e1e10f; /* Amarelo para o texto */
+  color: #ffffff; /* Azul para o texto */
+  text-align: center; /* Alinhamento centralizado */
 }
 
-.azul {
-    background-color: #1977A3;
-    width: 59.375rem;
-    border-radius: 2.5rem;
+
+/* ===================== */
+/* TIMELINE HORIZONTAL RESPONSIVA */
+/* ===================== */
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 100%;
 }
 
-/* pioneiros */
+.timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding-top: 60px;
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: nowrap; /* Impede quebra de linha */
+  gap: 2rem;
+  overflow-x: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, rgba(225, 225, 15, 0.6)); /* Amarelo */
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  z-index: 1;
+  text-align: center;
+  font-family: "Lexend Exa", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #e1e10f; /* Amarelo */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timeline-item::before {
+  content: attr(data-year);
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(225, 225, 15, 0.9); /* Amarelo */
+  color: #003c57;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 6px rgba(225, 225, 15, 0.6);
+  white-space: nowrap;
+}
+
+.timeline-item:hover,
+.timeline-item.active {
+  background-color: rgba(225, 225, 15, 0.2);
+  border-radius: 1rem;
+}
+
+/* Card de detalhes abaixo da linha */
+.timeline-card {
+  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: #ffffff; /* Verde */
+  box-shadow: 0 0 15px rgba(0, 164, 83, 0.3);
+  min-height: 180px;
+  max-width: 700px;
+  width: 100%;
+  font-family: "Lexend Exa", sans-serif;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  backdrop-filter: blur(20px);
+}
+
+.timeline-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #e1e10f; /* Amarelo */
+}
+
+.timeline-card p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #ffffff; /* Verde */
+}
+
+/* ===================== */
+/* PIONEIROS - MODERNO E FLUIDO */
+/* ===================== */
+
 .pioneiros {
-    background-color: #E6E6E6;
-    font-family: "Open Sans", sans-serif;
-    color: #003C57;
-    max-width: 90%;
-    padding: 1.875rem;
-    border-radius: 1.25rem;
-    margin-bottom: 3.125rem;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  height: auto;
+}
+
+.pioneiros h2 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-family: "Lexend Exa", sans-serif;
+  margin-bottom: 1.25rem;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 10rem;
 }
 
 .pioneiro {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem; 
-    margin-bottom: 1.875rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
 }
 
 .pioneiro img {
-    width: 12.5rem;
-    border: 0.25rem solid #1977A3;
-    border-radius: 0.75rem;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.pioneiro h3 {
-    margin-bottom: 0.625rem;
-    font-family: "Lexend Exa", sans-serif;
-    color: #003C57;
+
+
+.pioneiro .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  align-items: center;
 }
 
-/* vídeo aula (ajustada para mesmo tamanho da pioneiros, sem mexer nas margins) */
+.pioneiro .info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin: 3px 0 5px 0;
+  text-align: center;
+}
+
+
+.pioneiro .info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* ===================== */
+/* VÍDEO AULA - INTERATIVO E ELEGANTE */
+/* ===================== */
+
 .video_aula {
-    background-color: #003C57;
-    color: #FFF;
-    padding: 1.875rem;
-    border-radius: 1.25rem;
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-    max-width: 90%;
-    width: 100%;
+  position: relative;
+  background: linear-gradient(to right, #003c57, #005e7a);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto 5rem auto;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 60, 87, 0.3);
+  margin-top: 10rem;
+}
+
+.video_aula::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(225, 225, 15, 0.1), transparent);
+  animation: girarVideo 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes girarVideo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .video_aula h2 {
-    font-family: "Lexend Exa", sans-serif;
-    font-size: 1.375rem;
-    margin-bottom: 1.25rem;
-    color: #E1E10F;
+  font-family: "Lexend Exa", sans-serif;
+  font-size: 2rem;
+  color: #e1e10f;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
+.video_aula iframe,
 .video_aula img {
-    width: 100%;
-    max-width: 43.75rem;
-    border-radius: 0.75rem;
-    border: 0.25rem solid #1977A3;
-    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 800px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.video_aula img:hover,
+.video_aula iframe:hover {
+  transform: scale(1.02);
+}
+
+
+.video_aula img {
+  width: 100%;
+  max-width: 43.75rem;
+  border-radius: 0.75rem;
+  border: 0.25rem solid #1977a3;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .video_aula img:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+/* bolhas animadas */
+.bolhas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bolha {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: subir linear infinite;
+}
+
+@keyframes subir {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
 }

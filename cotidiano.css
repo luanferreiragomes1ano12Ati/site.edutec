@@ -1,63 +1,205 @@
-@import "./header.css";
+@import url(./header.css);
 
-*{
+/* ===== RESET BÁSICO ===== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lexend Exa', sans-serif;
 }
 
+/* ===== VARIÁVEIS ===== */
+:root {
+    --cor-fundo: #001f2d;
+    --cor-texto: #f1faff;
+    --cor-destaque: #e1e10f;
+    --padding-texto: 3rem;
+}
+
+/* ===== ESTILO GERAL ===== */
 body {
-    overflow: hidden; /* impede rolagem */
+    font-family: 'Open Sans', sans-serif;
+    color: var(--cor-texto);
+    min-height: 100vh;
+    background: var(--cor-fundo);
+    background-size: 400% 400%;
+    animation: moverFundo 15s ease infinite;
 }
 
-h1 {
-    font-family: "Lexend Exa", sans-serif;
-    color: #003C57;
-    margin-bottom: 5.3125rem;
-    font-size: 2vw;
+/* ===== ANIMAÇÃO DE FUNDO ===== */
+@keyframes moverFundo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-p {
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: 3.4375rem;
-}
+/* ===== IMAGEM DE FUNDO PRINCIPAL ===== */
+.primeira {
+    background: url("./images/cotidiano.bg.jpg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
 
-button {
-    font-size: 0.9375rem;
-    width: 6.25rem;
-    height: 2.125rem;
-    color: #FFF;
-    border-radius: 1.25rem;
-    background-color: #003C57;
-    border: none;
-    cursor: pointer;
-}
-
-.container {
     display: flex;
-    height: calc(100vh - 5rem); /* ocupa a tela toda menos o header */
-    margin-top: 0; /* cola no header */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    position: relative;
 }
 
+/* CAMADA ESCURA SOBRE A IMAGEM */
+.primeira::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Mantém textos acima da camada escura */
+.primeira h1,
+.primeira p {
+    position: relative;
+    z-index: 2;
+    padding: 0 var(--padding-texto); /* espaçamento lateral apenas no texto */
+}
+
+/* ===== CONTEÚDO ===== */
 .conteudo {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
     justify-content: center;
-    width: 50%;
-    padding: 3.4375rem;
+    align-items: center;
 }
 
-.img {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; 
-    align-items: flex-end;
-    width: 50%;   
-    height: 100%;
+.conteudo h1 {
+    font-size: 6vw;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 4rem;
+    margin-top: -3rem;
+    padding: 0 var(--padding-texto); /* respiro lateral */
 }
 
-.img img {
-    width: 80%;   /* agora ocupam toda a largura da área da direita */
-    height: 50%;   /* cada uma pega metade da altura disponível */
-    object-fit: cover;
+.conteudo p {
+    max-width: 70rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    padding: 0 var(--padding-texto);
+}
+
+/* ===== TÓPICOS EM GRID 2X2 ===== */
+.topicos {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 4rem;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+.topicos h2 {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 0 var(--padding-texto);
+}
+
+.topicos p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e8f7ff;
+    text-align: justify;
+    max-width: 70rem;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease;
+    padding: 0 var(--padding-texto);
+}
+
+/* ===== SEÇÃO DE VÍDEO ===== */
+.video_aula {
+    position: relative;
+    background: linear-gradient(to right, #003c57, #005e7a);
+    color: #ffffff;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    max-width: 1100px;
+    margin: 10rem auto 5rem auto;
+    overflow: hidden;
+    box-shadow: 0 0 3rem rgba(0, 60, 87, 0.3);
+}
+
+.video_aula::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(225, 225, 15, 0.1), transparent);
+    animation: girarVideo 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes girarVideo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.video_aula h2 {
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 2rem;
+    color: var(--cor-destaque);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    padding: 0 var(--padding-texto);
+}
+
+.video_aula iframe,
+.video_aula img {
+    width: 100%;
+    max-width: 800px;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.video_aula img:hover,
+.video_aula iframe:hover {
+    transform: scale(1.02);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    :root {
+        --padding-texto: 1.5rem;
+    }
+
+    .topicos {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .topicos p {
+        max-width: 90%;
+    }
 }

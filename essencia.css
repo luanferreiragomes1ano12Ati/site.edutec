@@ -11,7 +11,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #001f3f;
+  background: #012F6B;
   color: #f5f5f5;
   line-height: 1.7;
   overflow-x: hidden;
@@ -82,7 +82,7 @@ body {
   padding: 60px 5vw;
   flex-wrap: wrap;
   box-sizing: border-box;
-  background: #001f3f;
+  background: #012F6B;
 }
 
 .conteudo .bloco1,
