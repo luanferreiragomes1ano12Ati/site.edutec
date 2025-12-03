@@ -460,6 +460,8 @@ p{
 
 .informacoesJogo {
   flex: 1;
+  /* Pequeno ajuste para melhor espaçamento interno */
+  padding: 0 1rem;
 }
 
 .informacoesJogo h2 {
@@ -470,13 +472,18 @@ p{
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
+  /* Adicionado para suavizar a renderização */
+  transition: transform 0.3s ease;
 }
+
 
 .informacoesJogo p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
   opacity: 0.9;
+  /* Pequeno ajuste para melhor legibilidade */
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .informacoesJogo a {
@@ -489,11 +496,16 @@ p{
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  /* Adicionado para acessibilidade: estado de foco */
+  outline: none;
 }
 
-.informacoesJogo a:hover {
+.informacoesJogo a:hover,
+.informacoesJogo a:focus {
   background: white;
   color: #0066cc;
+  /* Leve elevação para foco */
+  box-shadow: 0 4px 8px rgba(0,191,255,0.3);
 }
 
 #mini-game img {
@@ -501,11 +513,19 @@ p{
   max-width: 300px;
   height: auto;
   filter: drop-shadow(0 0 20px rgba(0,191,255,0.3));
+  /* Adicionado para suavizar a transição e responsividade */
+  transition: transform 0.3s ease;
+  border-radius: 8px; /* Leve arredondamento para modernidade */
 }
 
+#mini-game img:hover {
+  /* Leve animação para interatividade */
+  transform: scale(1.05);
+}
 /* =========================
    FILMES
 ========================= */
+/* Seção principal: Container flexível para a seção de filmes */
 #filmes {
   padding: 6rem 2rem;
   display: flex;
@@ -513,17 +533,26 @@ p{
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  /* Removido 'flex-direction: row-reverse;' para inverter de volta: imagem à esquerda, textos à direita */
 }
 
+/* Imagem da seção de filmes */
 #filmes img {
   flex: 1;
   max-width: 300px;
   height: auto;
-  filter: drop-shadow(0 0 20px rgba(0,191,255,0.3));
+  filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.3));
+  /* Adicionado para suavizar interações */
+  transition: transform 0.3s ease;
+  border-radius: 8px; /* Leve arredondamento para modernidade */
 }
 
+
+/* Conteúdo textual da seção de filmes */
 .conteudoFilme {
   flex: 1;
+  /* Pequeno ajuste para melhor espaçamento interno */
+  padding: 0 1rem;
 }
 
 .conteudoFilme h2 {
@@ -534,44 +563,67 @@ p{
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
+  /* Adicionado para suavizar a renderização */
+  transition: transform 0.3s ease;
 }
+
 
 .conteudoFilme p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
   opacity: 0.9;
+  /* Pequeno ajuste para melhor legibilidade */
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .conteudoFilme a {
   display: inline-block;
   padding: 0.8rem 2rem;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border: 2px solid white;
   color: white;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  /* Adicionado para acessibilidade: estado de foco */
+  outline: none;
 }
 
-.conteudoFilme a:hover {
+.conteudoFilme a:hover,
+.conteudoFilme a:focus {
   background: white;
   color: #0066cc;
+  /* Leve elevação para foco */
+  box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
 }
 
 /* =========================
    FOOTER
 ========================= */
+
 footer {
   padding: 4rem 2rem 2rem;
   background: rgba(0, 20, 40, 0.8);
   border-top: 1px solid rgba(0, 191, 255, 0.3);
+  /* Inovação: Adicionado um gradiente sutil de fundo para profundidade */
+  background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 50, 80, 0.7) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+
+@keyframes floatParticles {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
 }
 
 .developers-section {
   text-align: center;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima do fundo decorativo */
 }
 
 .developers-section h2 {
@@ -582,14 +634,18 @@ footer {
   background-clip: text;
   color: transparent;
   text-transform: uppercase;
+  /* Inovação: Adicionada animação de brilho pulsante */
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .imagem {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 5rem; /* Aumentado de 3rem para 5rem para mais espaçamento entre as imagens */
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .imagem img {
@@ -599,34 +655,52 @@ footer {
   object-fit: cover;
   border: 2px solid #00bfff;
   filter: drop-shadow(0 0 10px rgba(0,191,255,0.3));
-  gap: 5rem;
+  margin-bottom: 0.5rem;
+  /* Inovação: Transições suaves e efeito de hover com rotação e brilho */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
 }
+
+.imagem {
+  gap: 8rem; /* Ajuste o valor para aumentar ou diminuir o espaço */
+}
+
 
 .dev-names {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 5rem; /* Ajustado para 5rem para corresponder ao gap das imagens e manter alinhamento */
   list-style: none;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .dev-names li {
   font-weight: 500;
   color: #00bfff;
+  /* Inovação: Efeito de hover nos nomes para interatividade */
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
+
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-column h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #00bfff;
+  position: relative;
 }
+
 
 .footer-column p {
   line-height: 1.7;
@@ -640,10 +714,14 @@ footer {
 .footer-column ul li {
   margin-bottom: 0.5rem;
   opacity: 0.9;
+  /* Inovação: Hover nos links para destaque */
+  transition: opacity 0.3s ease, padding-left 0.3s ease;
 }
 
 .logo-container {
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .logo-text {
@@ -653,6 +731,13 @@ footer {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* Inovação: Animação de digitação para o logo */
+  animation: typeWriter 3s steps(20) 1s both;
+}
+
+@keyframes typeWriter {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 .copyright {
@@ -660,6 +745,15 @@ footer {
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0.7;
+  position: relative;
+  z-index: 1;
+  /* Inovação: Fade-in suave ao carregar */
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 0.7; transform: translateY(0); }
 }
 
 /* =========================

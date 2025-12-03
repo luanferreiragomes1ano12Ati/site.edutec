@@ -1,22 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking</title>
+    <link rel="stylesheet" href="racking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet" />
+    
+    <title>Ranking do Jogo</title>
+    <link rel="stylesheet" href="ranking.css">
 </head>
 <body>
-    <h1>TOP RUN</h1>
 
-    <div><img src="" alt="tartaruga"></div>
+    <!--HEADER HTML-->
 
-
-    <div>
-        <h2>Champion</h2>
-        <div class="champion">
-           <img src="" alt="ranking Champion">
+    <header class="header">
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./images/logo.png" alt="Descrição da imagem" width="200">
+          </a>
+          
         </div>
-        
+    
+        <nav class="nav">
+          <ul>
+            <li><a href="./historia.html">História</a></li>
+            <li><a href="./essencia.html">Essência</a></li>
+            <li><a href="./cotidiano.html">Cotidiano</a></li>
+            <li><a href="./tela_jogo.html">Jogo</a></li>
+            <li><a href="./filmes.html">Filmes</a></li>
+            <li><a href="./curiosidade.html">Curiosidades</a></li>
+            <li><a href="./sobre_nos.html">Sobre nós</a></li>
+           </ul>
+        </nav>
+    
+        <a href="./login.html">Login</a>
+      </header>
+  
+    <!-- Contúdo da página-->
+
+    <h1>TABELA DE CLASSIFICAÇÃO</h1>
+    
+    <div class="top3">
+        <div class="segundo">
+            <img src="./images/viuvanegra.jpg" alt="Imagem da viuva negra">
+            <p> <strong> Viuva Negra </strong> </p>
+            <p>3000 Pontos</p>
+        </div>
+
+        <div class="primeiro">
+            <img src="./images/ironman.jpg" alt="Imagem do homem de ferro">
+            <p> <strong> Homem de Ferro </strong></p>
+            <p>5000 Pontos</p>
+        </div>
+
+        <div class="terceiro">
+            <img src="./images/hulk.jpg" alt="Imagem do hulk">
+            <p> <strong> Hulk </strong> </p>
+            <p>2000 Pontos</p>
+        </div>
+    </div> 
+    
+    <div class="menu">
+        <button>Rank</button>
+        <button>Player</button>
+        <button>Pontos</button>
+    </div>
+
+    <div class="ranking-list">
+        <div class="ranking-item">
+            <span class="rank-number">4</span>
+            <img src="./images/magneto.jpg" alt="Imagem do Magneto">
+            <p>MAGENTO</p>
+            <span class="points">1900 PONTOS</span>
+        </div>
+    
+        <div class="ranking-item">
+            <span class="rank-number">5</span>
+            <img src="./images/wanda.jpg" alt="Imagem da Feiticeira Escarlate">
+            <p>FEITICEIRA</p>
+            <span class="points">1850 PONTOS</span>
+        </div>
+    
+        <div class="ranking-item">
+            <span class="rank-number">6</span>
+            <img src="./images/capitao.jpg" alt="Imagem do Capitão América">
+            <p>CAPITÃO</p>
+            <span class="points">1800 PONTOS</span>
+        </div>
+    
+        <div class="ranking-item">
+            <span class="rank-number">7</span>
+            <img src="./images/dman.jpg" alt="Imagem do D Man">
+            <p>D MAN</p>
+            <span class="points">1700 PONTOS</span>
+        </div>
+    
+        <div class="ranking-item">
+            <span class="rank-number">8</span>
+            <img src="./images/spiderman.jpg" alt="Imagem do Spider-Man">
+            <p>SPIDERMAN</p>
+            <span class="points">1650 PONTOS</span>
+        </div>
+    
+        <div class="ranking-item">
+            <span class="rank-number">9</span>
+            <img src="./images/wolverine.jpg" alt="Imagem do Wolverine">
+            <p>WOLVERINE</p>
+            <span class="points">1500 PONTOS</span>
+        </div>
     </div>
 </body>
 </html>
